@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-txt</title>
+    <!--接受string类型 一般不用 不如胡须灵活-->
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+    <p v-text="message"></p>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: '你好 郭大路!'
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <!--编译卡主 不应该显示胡须语法 用cloak 斗篷-->
+    <title>v-cloak</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <p>{{ message }}</p>
+    <p>{{ message }}</p>
+
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    setTimeout(function () {
+        const  app=new Vue({
+            el: '#app',
+            data: {
+                message: '你好 郭大路!'
+            }
+        })
+    }
+  ,1000)
+</script>
+</body>
+</html>

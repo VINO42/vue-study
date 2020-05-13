@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-html</title>
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+    <!--渲染 返回的url 或者html-->
+    <p v-html='url'></p>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: '你好 郭大路!',
+            url: '<a href="http://www.baidu.com">百度</a>'
+        }
+    })
+</script>
+</body>
+</html>

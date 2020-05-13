@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue4 mustach</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+    <p>{{firstname}} {{lastname}}</p>
+    <p>{{firstname +'-'+lastname}}</p>
+    <p>{{counter}}*2</p>
+    <p>{{counter*2}}</p>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: '你好 郭大路!',
+            firstname: 'kobe',
+            lastname: 'brant',
+            counter: 100
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+    <!--动态绑定属性 缩写方式: p15-->
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+    <img v-bind:src="imageUrl"></img>
+    <a v-bind:href="baiduurl">百度一下</a>
+    <!-- v-bind 语法糖 -->
+    <a  :href="JDurl">京东一下</a>
+    <!--bind class 动态绑定class-->
+    <!-- h2 上有 active class-->
+    <h2 calss="title" :class="{active:isActive,line:isLine}">{{message}}</h2>
+    <button @click="changeColor">change</button>
+
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: '你好 郭大路!',
+            imageUrl:'http://x0.ifengimg.com/res/2019/7DBEC5F9DEA5B83526C8EAAA897ADE7DFC52FE47_size60_w640_h985.jpeg',
+            baiduurl:"http://www.baidu.com",
+            JDurl:'http://jd.com',
+            /*动态绑定class*/
+            isActive:true,
+            isLine:true
+        },
+        methods:{
+            changeColor(){
+                this.isActive=!this.isActive;
+            }
+        }
+    })
+</script>
+</body>
+</html>

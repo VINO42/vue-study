@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue3</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h2>当前计数:: {{counter}}</h2>
+    <button v-on:click="increse">+</button>
+    <!--v-onclick 语法糖-->
+    <button @click="decrese">-</button>
+
+</div>
+<script>
+    const vue3 = new Vue({
+        el: "#app",
+        data: {
+            counter: 0
+
+        },
+        methods: {
+            increse() {
+                this.counter++;
+            },
+            decrese() {
+                if (this.counter==0){
+                    return
+                }
+                this.counter--;
+            }
+        }
+    })
+</script>
+</body>
+</html>
