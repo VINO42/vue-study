@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind-style</title>
+    <!--style 绑定 value得加单引号-->
+</head>
+<body>
+    <div id="app">
+        <p :style="{color: mycolor,fontSize:size}">{{ message }}</p>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: '你好 郭大路!',
+                mycolor: 'red',
+                size: '100px'
+            }
+        })
+    </script>
+
+</body>
+</html>

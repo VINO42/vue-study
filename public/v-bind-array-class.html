@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind class array</title>
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+    <p :class="getClass()">{{message}}</p>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: '你好 郭大路!',
+            active: 'active',
+            line:'line'
+        },
+        methods: {
+            getClass:function() {
+                return [this.active, this.line];
+            }
+        }
+    })
+</script>
+</body>
+</html>

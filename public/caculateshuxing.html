@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性</title>
+    <!--不同于methods 只执行一次 methods 调用几次执行几次-->
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+    <p>{{ fullName }}</p>
+    <p>{{totalPrice}}</p>
+
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: '你好 郭大路!',
+            firstName: '燕',
+            lastName: '七',
+            books:[
+                {id:10,price:100},
+                {id:11,price:101},
+                {id:13,price:102},
+                {id:12,price:103},
+                {id:14,price:104}
+            ]
+        },
+        computed:{
+            fullName:function () {
+                return this.firstName + '' +this.lastName
+            },
+            totalPrice:function () {
+                let res=0;
+                for (let i =0;i<this.books.length;i++){
+                    res +=this.books[i].price
+                }
+                return res;
+            }
+        }
+
+    })
+</script>
+
+</body>
+</html>

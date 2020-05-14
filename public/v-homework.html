@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homework</title>
+    <style>
+        .active{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+    <ul>
+        <li v-for="(m,index) in movies" @click="change(index)" :class="{active:cl===index}">{{m}}</li>
+    </ul>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: '你好 郭大路!',
+            movies: ["DDDR",'永生之酒','妖精的尾巴'],
+            isActive: true,
+            cl:0,
+        },
+        methods:{
+            change(index){
+                this.cl=index;
+            }
+
+        }
+    })
+</script>
+</body>
+</html>
